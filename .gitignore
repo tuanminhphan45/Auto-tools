@@ -1,0 +1,74 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+.venv/
+.ENV/
+.env/
+pip-wheel-metadata/
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs and databases
+*.log
+*.sqlite3
+*.db
+
+# Unit test / coverage
+.coverage
+htmlcov/
+.tox/
+.nox/
+.pytest_cache/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Profiles
+*.prof
+
+# Secrets and credentials (project-specific)
+token.json
+oauth_credentials.json
+account_status.json
+accounts.config
+credentials.json
+
+# Misc
+*.pem
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+
+# macOS
+*.DS_Store
