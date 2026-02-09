@@ -5,7 +5,10 @@ __pycache__/
 
 # C extensions
 *.so
-./completed_tasks.xlsx
+
+# Excel task files
+completed_tasks.xlsx
+
 # Distribution / packaging
 .Python
 build/
