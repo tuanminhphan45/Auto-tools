@@ -34,6 +34,11 @@ class DataManager:
         self.gc = None  # Google Sheets client
         self.sheet = None
         
+        # Auto-accept whitelist from ok.xlsx
+        self.whitelist_uids = set()
+        self.whitelist_task_links = set()
+        self._load_whitelist()
+        
         # Auto-refresh settings
         self.last_refresh_time = 0
         self.next_refresh_interval = self._get_random_refresh_interval()
@@ -42,6 +47,31 @@ class DataManager:
             self.load_from_google_sheets()
         elif file_path:
             self.load_data()
+    
+    def _load_whitelist(self):
+        """Load auto-accept whitelist from ok.xlsx"""
+        whitelist_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'ok.xlsx')
+        if os.path.exists(whitelist_file):
+            try:
+                df_whitelist = pd.read_excel(whitelist_file, sheet_name=0)
+                if 'UID' in df_whitelist.columns:
+                    self.whitelist_uids = set(df_whitelist['UID'].dropna().astype(str).str.strip())
+                if 'Task Link' in df_whitelist.columns:
+                    self.whitelist_task_links = set(df_whitelist['Task Link'].dropna().astype(str).str.strip())
+                log.log_status(f"Loaded whitelist: {len(self.whitelist_uids)} UIDs, {len(self.whitelist_task_links)} Task Links", 'INFO')
+            except Exception as e:
+                log.log_status(f"Error loading whitelist from ok.xlsx: {e}", 'WARNING')
+    
+    def _is_in_whitelist(self, task_id):
+        """Check if task_id or task_link is in whitelist"""
+        # Check if task_id matches any UID in whitelist
+        if task_id in self.whitelist_uids:
+            return True
+        # Check if task_id is contained in any Task Link
+        for link in self.whitelist_task_links:
+            if task_id in link:
+                return True
+        return False
     
     def _get_random_refresh_interval(self):
         """Get random refresh interval from config"""
@@ -198,6 +228,11 @@ class DataManager:
         """
         # Auto-refresh if needed
         self.auto_refresh_if_needed()
+        
+        # Check whitelist first - if task_id is in ok.xlsx, auto ACCEPT
+        if self._is_in_whitelist(task_id):
+            print(f"  ✅ Task {task_id} found in whitelist (ok.xlsx) -> AUTO ACCEPT")
+            return {"action": "ACCEPT", "notes": "Auto-accepted from whitelist (ok.xlsx)"}, None
         
         if self.df is None:
             return {"action": "UNSURE", "notes": "Data file not loaded"}, None
