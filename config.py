@@ -6,14 +6,14 @@
 # ------------------------------------------
 # DELAY TIMES (giả lập người thật - in seconds)
 # ------------------------------------------
-DELAY_ACCEPT_MIN = 10       # Min delay for ACCEPT action
-DELAY_ACCEPT_MAX = 15       # Max delay for ACCEPT action
+DELAY_ACCEPT_MIN = 3        # Min delay for ACCEPT action
+DELAY_ACCEPT_MAX = 5        # Max delay for ACCEPT action
 
-DELAY_REVISION_MIN = 12     # Min delay for REVISION/UNSURE action
-DELAY_REVISION_MAX = 25     # Max delay for REVISION/UNSURE action
+DELAY_REVISION_MIN = 4      # Min delay for REVISION/UNSURE action
+DELAY_REVISION_MAX = 8      # Max delay for REVISION/UNSURE action
 
-DELAY_REJECT_MIN = 17       # Min delay for REJECT action
-DELAY_REJECT_MAX = 23       # Max delay for REJECT action
+DELAY_REJECT_MIN = 5        # Min delay for REJECT action
+DELAY_REJECT_MAX = 7        # Max delay for REJECT action
 
 # ------------------------------------------
 # DECISION LOGIC (overall_score thresholds)
@@ -30,22 +30,22 @@ TASKS_PER_ROTATION = 100    # Mỗi account làm bao nhiêu task mỗi rotation
 # ------------------------------------------
 # AUTO-REFRESH (Google Sheets)
 # ------------------------------------------
-REFRESH_MIN_MINUTES = 3     # Min time before refresh (minutes)
-REFRESH_MAX_MINUTES = 7     # Max time before refresh (minutes)
+REFRESH_MIN_MINUTES = 1     # Min time before refresh (minutes)
+REFRESH_MAX_MINUTES = 3     # Max time before refresh (minutes)
 
 # ------------------------------------------
 # PAGE WAIT TIMES (milliseconds/seconds)
 # ------------------------------------------
-WAIT_AFTER_LOGIN = 2000     # Wait after clicking sign in (ms)
-WAIT_AFTER_CLICK = 1000     # Wait after clicking buttons (ms)
-WAIT_PAGE_LOAD = 5000       # Wait for page to load (ms)
+WAIT_AFTER_LOGIN = 1000     # Wait after clicking sign in (ms)
+WAIT_AFTER_CLICK = 500      # Wait after clicking buttons (ms)
+WAIT_PAGE_LOAD = 2000       # Wait for page to load (ms)
 WAIT_BEFORE_SUBMIT_MIN = 1  # Min wait before submit (seconds)
-WAIT_BEFORE_SUBMIT_MAX = 3  # Max wait before submit (seconds)
+WAIT_BEFORE_SUBMIT_MAX = 2  # Max wait before submit (seconds)
 
 # ------------------------------------------
 # BROWSER WATCHDOG SETTINGS
 # ------------------------------------------
-WATCHDOG_CHECK_INTERVAL = 45    # Seconds between health checks
+WATCHDOG_CHECK_INTERVAL = 20    # Seconds between health checks
 WATCHDOG_MIN_BROWSERS = 1       # Always maintain this many browsers
 WATCHDOG_MAX_RESTARTS = 3       # Max restart attempts per account
 
