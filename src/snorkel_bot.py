@@ -123,11 +123,11 @@ class SnorkelBot:
         )
         
         if action == "ACCEPT":
-            delay = random.randint(DELAY_ACCEPT_MIN, DELAY_ACCEPT_MAX)
+            delay = random.uniform(DELAY_ACCEPT_MIN, DELAY_ACCEPT_MAX)
         elif action in ["REVISE", "UNSURE"]:
-            delay = random.randint(DELAY_REVISION_MIN, DELAY_REVISION_MAX)
+            delay = random.uniform(DELAY_REVISION_MIN, DELAY_REVISION_MAX)
         else:  # REJECT
-            delay = random.randint(DELAY_REJECT_MIN, DELAY_REJECT_MAX)
+            delay = random.uniform(DELAY_REJECT_MIN, DELAY_REJECT_MAX)
         
         return delay
 
