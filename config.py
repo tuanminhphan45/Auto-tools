@@ -6,14 +6,14 @@
 # ------------------------------------------
 # DELAY TIMES (giả lập người thật - in seconds)
 # ------------------------------------------
-DELAY_ACCEPT_MIN = 3        # Min delay for ACCEPT action
-DELAY_ACCEPT_MAX = 5        # Max delay for ACCEPT action
+DELAY_ACCEPT_MIN = 13.9      # Min delay for ACCEPT action (increased 30%)
+DELAY_ACCEPT_MAX = 16.5      # Max delay for ACCEPT action (increased 30%)
 
-DELAY_REVISION_MIN = 4      # Min delay for REVISION/UNSURE action
-DELAY_REVISION_MAX = 8      # Max delay for REVISION/UNSURE action
+DELAY_REVISION_MIN = 15.2    # Min delay for REVISION/UNSURE action (increased 30%)
+DELAY_REVISION_MAX = 20.4   # Max delay for REVISION/UNSURE action (increased 30%)
 
-DELAY_REJECT_MIN = 5        # Min delay for REJECT action
-DELAY_REJECT_MAX = 7        # Max delay for REJECT action
+DELAY_REJECT_MIN = 16.5      # Min delay for REJECT action (increased 30%)
+DELAY_REJECT_MAX = 19.1      # Max delay for REJECT action (increased 30%)
 
 # ------------------------------------------
 # DECISION LOGIC (overall_score thresholds)
@@ -30,17 +30,17 @@ TASKS_PER_ROTATION = 100    # Mỗi account làm bao nhiêu task mỗi rotation
 # ------------------------------------------
 # AUTO-REFRESH (Google Sheets)
 # ------------------------------------------
-REFRESH_MIN_MINUTES = 1     # Min time before refresh (minutes)
-REFRESH_MAX_MINUTES = 3     # Max time before refresh (minutes)
+REFRESH_MIN_MINUTES = 5     # Min time before refresh (minutes)
+REFRESH_MAX_MINUTES = 10     # Max time before refresh (minutes)
 
 # ------------------------------------------
 # PAGE WAIT TIMES (milliseconds/seconds)
 # ------------------------------------------
-WAIT_AFTER_LOGIN = 1000     # Wait after clicking sign in (ms)
-WAIT_AFTER_CLICK = 500      # Wait after clicking buttons (ms)
-WAIT_PAGE_LOAD = 2000       # Wait for page to load (ms)
-WAIT_BEFORE_SUBMIT_MIN = 1  # Min wait before submit (seconds)
-WAIT_BEFORE_SUBMIT_MAX = 2  # Max wait before submit (seconds)
+WAIT_AFTER_LOGIN = 1300     # Wait after clicking sign in (ms) (increased 30%)
+WAIT_AFTER_CLICK = 650      # Wait after clicking buttons (ms) (increased 30%)
+WAIT_PAGE_LOAD = 2600       # Wait for page to load (ms) (increased 30%)
+WAIT_BEFORE_SUBMIT_MIN = 1.3  # Min wait before submit (seconds) (increased 30%)
+WAIT_BEFORE_SUBMIT_MAX = 2.6  # Max wait before submit (seconds) (increased 30%)
 
 # ------------------------------------------
 # BROWSER WATCHDOG SETTINGS
